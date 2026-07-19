@@ -19,7 +19,7 @@ export default function SalesForm({ setShowForm, onSuccess }) {
   const fetchProducts = async () => {
     try {
       const data = isAdmin ? await getProducts() : await getShopProducts();
-      setAvailableProducts(data?.data || []);
+      setAvailableProducts(data?.data.data || []);
     } catch (error) {
       console.error("Fetch products error:", error);
     }
